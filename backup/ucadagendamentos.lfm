@@ -1,0 +1,312 @@
+object FAgendamentos: TFAgendamentos
+  Left = 278
+  Height = 430
+  Top = 127
+  Width = 840
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Cadastro de Agendamentos'
+  ClientHeight = 430
+  ClientWidth = 840
+  Position = poScreenCenter
+  LCLVersion = '2.2.2.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 72
+    Top = 0
+    Width = 840
+    Align = alTop
+    ClientHeight = 72
+    ClientWidth = 840
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 32
+      Height = 28
+      Top = 20
+      Width = 142
+      Caption = 'Agendamentos'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -20
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 400
+      Height = 33
+      Top = 20
+      Width = 352
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 33
+      ClientWidth = 352
+      DataSource = DSAgendamentos
+      Options = []
+      TabOrder = 0
+    end
+  end
+  object DBEdit1: TDBEdit
+    Left = 40
+    Height = 23
+    Top = 120
+    Width = 56
+    DataField = 'id_agendamento'
+    DataSource = DSAgendamentos
+    Alignment = taRightJustify
+    MaxLength = 0
+    TabOrder = 1
+  end
+  object Label2: TLabel
+    Left = 40
+    Height = 16
+    Top = 96
+    Width = 15
+    Caption = 'ID'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 128
+    Height = 16
+    Top = 96
+    Width = 128
+    Caption = 'Nome do Paciente'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 128
+    Height = 23
+    Top = 120
+    Width = 200
+    DataField = 'id'
+    DataSource = DSAgendamentos
+    KeyField = 'id'
+    ListField = 'nome'
+    ListFieldIndex = 0
+    ListSource = FPacientes.DSPacientes
+    LookupCache = False
+    TabOrder = 2
+  end
+  object DBEdit2: TDBEdit
+    Left = 40
+    Height = 23
+    Top = 184
+    Width = 112
+    DataField = 'data_agendamento'
+    DataSource = DSAgendamentos
+    EditMask = '##/##/####'
+    MaxLength = 0
+    TabOrder = 3
+  end
+  object Label4: TLabel
+    Left = 40
+    Height = 16
+    Top = 160
+    Width = 33
+    Caption = 'Data'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit3: TDBEdit
+    Left = 192
+    Height = 23
+    Top = 184
+    Width = 137
+    DataField = 'hora_agendamento'
+    DataSource = DSAgendamentos
+    EditMask = '##:##'
+    MaxLength = 10
+    TabOrder = 4
+  end
+  object Label5: TLabel
+    Left = 208
+    Height = 16
+    Top = 160
+    Width = 34
+    Caption = 'Hora'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 40
+    Height = 16
+    Top = 224
+    Width = 101
+    Caption = 'Especialidade'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBComboBox1: TDBComboBox
+    Left = 41
+    Height = 23
+    Top = 248
+    Width = 288
+    DataField = 'especialidade'
+    DataSource = DSAgendamentos
+    ItemHeight = 15
+    Items.Strings = (
+      'Cardiologista'
+      'Dentista'
+      'Nutricionista'
+      'Ortopedista'
+      'Pediatra'
+      'Oftamologista'
+      'Psicologo'
+    )
+    MaxLength = 0
+    TabOrder = 5
+  end
+  object Label7: TLabel
+    Left = 41
+    Height = 16
+    Top = 288
+    Width = 118
+    Caption = 'Nome do Médico'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit4: TDBEdit
+    Left = 41
+    Height = 23
+    Top = 312
+    Width = 287
+    DataField = 'medico'
+    DataSource = DSAgendamentos
+    MaxLength = 40
+    TabOrder = 6
+  end
+  object DBGrid1: TDBGrid
+    Left = 368
+    Height = 272
+    Top = 152
+    Width = 456
+    Color = clWindow
+    Columns = <    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Height = -13
+        Title.Font.Name = 'Segoe UI Semibold'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'Data Consulta'
+        Width = 100
+        FieldName = 'data_agendamento'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Height = -13
+        Title.Font.Name = 'Segoe UI Semibold'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'Horario Consulta'
+        Width = 110
+        FieldName = 'hora_agendamento'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Height = -13
+        Title.Font.Name = 'Segoe UI Semibold'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'Especialidade'
+        Width = 110
+        FieldName = 'especialidade'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Height = -13
+        Title.Font.Name = 'Segoe UI Semibold'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'Médico'
+        Width = 100
+        FieldName = 'medico'
+      end>
+    DataSource = DSAgendamentos
+    TabOrder = 7
+  end
+  object EdtBuscaAgendamentos: TEdit
+    Left = 368
+    Height = 23
+    Top = 120
+    Width = 456
+    OnChange = EdtBuscaAgendamentosChange
+    TabOrder = 8
+  end
+  object Label8: TLabel
+    Left = 368
+    Height = 16
+    Top = 96
+    Width = 125
+    Caption = 'Busca por Médico'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DSAgendamentos: TDataSource
+    DataSet = DataModuleF.QRYAgendamentos
+    Left = 280
+    Top = 18
+  end
+end

@@ -1,0 +1,235 @@
+object FPacientes: TFPacientes
+  Left = 275
+  Height = 504
+  Top = 118
+  Width = 824
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Agendamento de Pacientes'
+  ClientHeight = 504
+  ClientWidth = 824
+  Position = poScreenCenter
+  LCLVersion = '2.2.2.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 72
+    Top = 0
+    Width = 824
+    Align = alTop
+    ClientHeight = 72
+    ClientWidth = 824
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 27
+      Height = 28
+      Top = 20
+      Width = 208
+      Caption = 'Cadastro de Pacientes'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -20
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 400
+      Height = 33
+      Top = 20
+      Width = 352
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 33
+      ClientWidth = 352
+      DataSource = DSPacientes
+      Options = []
+      TabOrder = 0
+    end
+  end
+  object DBEdit1: TDBEdit
+    Left = 27
+    Height = 23
+    Top = 116
+    Width = 40
+    DataField = 'id'
+    DataSource = DSPacientes
+    Alignment = taRightJustify
+    MaxLength = 0
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 107
+    Height = 23
+    Top = 116
+    Width = 216
+    DataField = 'cpf'
+    DataSource = DSPacientes
+    EditMask = '###.###.###-##'
+    MaxLength = 14
+    TabOrder = 2
+  end
+  object DBEdit3: TDBEdit
+    Left = 27
+    Height = 23
+    Top = 173
+    Width = 296
+    DataField = 'nome'
+    DataSource = DSPacientes
+    MaxLength = 80
+    TabOrder = 3
+  end
+  object DBEdit4: TDBEdit
+    Left = 27
+    Height = 23
+    Top = 226
+    Width = 128
+    DataField = 'celular'
+    DataSource = DSPacientes
+    EditMask = '(##) #####-####'
+    MaxLength = 16
+    TabOrder = 4
+  end
+  object DBEdit5: TDBEdit
+    Left = 187
+    Height = 23
+    Top = 226
+    Width = 136
+    DataField = 'data_cadastro'
+    DataSource = DSPacientes
+    ReadOnly = True
+    MaxLength = 0
+    TabOrder = 5
+  end
+  object Label2: TLabel
+    Left = 27
+    Height = 16
+    Top = 94
+    Width = 15
+    Caption = 'ID'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 107
+    Height = 16
+    Top = 96
+    Width = 29
+    Caption = 'CPF'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 27
+    Height = 16
+    Top = 153
+    Width = 111
+    Caption = 'Nome Completo'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 27
+    Height = 16
+    Top = 206
+    Width = 49
+    Caption = 'Celular'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 187
+    Height = 16
+    Top = 206
+    Width = 122
+    Caption = 'Data de Cadastro'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBGrid1: TDBGrid
+    Left = 376
+    Height = 335
+    Top = 153
+    Width = 424
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Height = -15
+        Title.Font.Name = 'Segoe UI Semibold'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'Pacientes Cadastrados'
+        Width = 250
+        FieldName = 'nome'
+      end>
+    DataSource = DSPacientes
+    ReadOnly = True
+    Scrollbars = ssAutoVertical
+    TabOrder = 7
+  end
+  object EdtBuscaPaciente: TEdit
+    Left = 376
+    Height = 23
+    Top = 116
+    Width = 424
+    OnChange = EdtBuscaPacienteChange
+    TabOrder = 6
+  end
+  object Label7: TLabel
+    Left = 376
+    Height = 16
+    Top = 94
+    Width = 108
+    Caption = 'Busca Paciente'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DSPacientes: TDataSource
+    DataSet = DataModuleF.QRYPacientes
+    Left = 296
+    Top = 16
+  end
+end
